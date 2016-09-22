@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+    <input type="text" ng-model="xyz1"/>
+    <input type="text" ng-model="xyz2" />
+    </br></br>
+    <input type="button" ng-click="sumresult()" value="addition">
+    <input type="button" ng-click="subresult()" value="substraction">
+
+    <script>
+
+        var app = angular.module("myModule", []);
+
+
+        app.service("math", function () {
+
+            this.sum=function(a,b){return a+b};
+            
+            this.Sub = function (a, b) { return a - b };
+
+        });
+
+        app.controller("myController", function ($scope, math)
+        {
+            $scope.sumresult = function () {
+
+                $scope.result= math.sum
+            }
+
+
+        });
+
+
+
+    </script>
+</body>
+</html>

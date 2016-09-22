@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</head>
+<body>
+    <div ng-controller="myController">
+        <div ng-include="''ng-init.html''">
+            </div>
+    </div>
+
+    <script>
+         var app = angular
+             .module("myModule", [])
+             .controller("myController", function ($scope) {
+
+                 var countries = [
+                     {
+                         name: "UK",
+                         cities: [
+                             { name: "London" },
+                             { name: "Birmingham" },
+                             { name: "Manchester" }
+                         ]
+                     },
+                     {
+                         name: "USA",
+                         cities: [
+                             { name: "Los Angeles" },
+                             { name: "Chicago" },
+                             { name: "Houston" }
+                         ]
+                     },
+                     {
+                         name: "India",
+                         cities: [
+                             { name: "Hyderabad" },
+                             { name: "Chennai" },
+                             { name: "Mumbai" }
+                         ]
+                     }
+                 ];
+
+                 $scope.countries = countries;
+             });
+
+    </script>
+</body>
+</html>

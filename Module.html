@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-controller="myController">
+
+        {{display}}
+
+
+
+    </div>
+
+
+
+    <script>
+        var myApp = angular.module("myModule", []);
+
+        var myController = function ($scope) {
+
+            $scope.display = "Angularjs"
+        };
+
+        myApp.controller("myController", myController);
+
+    </script>
+</body>
+</html>

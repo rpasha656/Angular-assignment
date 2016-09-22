@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</head>
+<body>
+
+    <div ng-controller="myController">
+        <input type="checkbox" ng-model="hidegender"/>Hide Gender
+    <table>
+        <thead>
+            <tr>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th ng-hide="hidegender">gender</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>{{employee.firstname}}</td>
+                <td>{{employee.lastname}}</td>
+                <td ng-hide="hidegender">{{employee.gender}}</td>
+
+
+            </tr>
+
+        </tbody>
+
+
+
+
+    </table>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>firstname</th>
+                    <th>lastname</th>
+                    <th ng-show="!hidegender">gender</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.firstname}}</td>
+                    <td>{{employee.lastname}}</td>
+                    <td ng-show="!hidegender">{{employee.gender}}</td>
+
+
+                </tr>
+
+            </tbody>
+
+
+
+
+        </table>
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+    <script>
+        var app = angular.module("myModule",[])
+                  .controller("myController", function ($scope) {
+
+                      var employees = [
+
+                          {firstname: "Riyaz", lastname: "Shaik", gender: "Male"},
+                          {firstname: "Ram",   lastname: "Reddy", gender: "Male"}
+
+
+                      ];
+
+                      $scope.employees = employees;
+                  });
+
+
+
+    </script>
+</body>
+</html>
